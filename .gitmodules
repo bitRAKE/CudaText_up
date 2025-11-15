@@ -1,0 +1,33 @@
+[submodule "src/bgrabitmap"]
+	path = src/bgrabitmap
+	url = https://github.com/bgrabitmap/bgrabitmap
+[submodule "src/EncConv"]
+	path = src/EncConv
+	url = https://github.com/Alexey-T/EncConv
+[submodule "src/ATBinHex-Lazarus"]
+	path = src/ATBinHex-Lazarus
+	url = https://github.com/Alexey-T/ATBinHex-Lazarus
+[submodule "src/ATFlatControls"]
+	path = src/ATFlatControls
+	url = https://github.com/Alexey-T/ATFlatControls
+[submodule "src/ATSynEdit"]
+	path = src/ATSynEdit
+	url = https://github.com/Alexey-T/ATSynEdit
+[submodule "src/ATSynEdit_Cmp"]
+	path = src/ATSynEdit_Cmp
+	url = https://github.com/Alexey-T/ATSynEdit_Cmp
+[submodule "src/EControl"]
+	path = src/EControl
+	url = https://github.com/Alexey-T/EControl
+[submodule "src/ATSynEdit_Ex"]
+	path = src/ATSynEdit_Ex
+	url = https://github.com/Alexey-T/ATSynEdit_Ex
+[submodule "src/Python-for-Lazarus"]
+	path = src/Python-for-Lazarus
+	url = https://github.com/Alexey-T/Python-for-Lazarus
+[submodule "src/Emmet-Pascal"]
+	path = src/Emmet-Pascal
+	url = https://github.com/Alexey-T/Emmet-Pascal
+[submodule "src/CudaText"]
+	path = src/CudaText
+	url = https://github.com/Alexey-T/CudaText
