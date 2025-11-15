@@ -15,6 +15,10 @@ set "DO_MAKE=0"
 set "DO_CLEAN=0"
 set "LAZDIR="
 
+set "SCRIPT_DIR=%~dp0"
+set "REPO_FILE=%SCRIPT_DIR%cudaup.repos"
+set "PACK_FILE=%SCRIPT_DIR%cudaup.packets"
+
 if "%~1"=="" goto :usage
 
 :parse_args
@@ -54,11 +58,7 @@ goto :usage
 
 :args_done
 
-set "SCRIPT_DIR=%~dp0"
 pushd "%SCRIPT_DIR%"
-
-set "REPO_FILE=cudaup.repos"
-set "PACK_FILE=cudaup.packets"
 
 if "%DO_CLEAN%"=="1"  call :do_clean
 if "%DO_GET%"=="1"    call :do_get
@@ -169,9 +169,7 @@ rem ------------------------------------------------------------
 for /f "usebackq delims=" %%P in ("%PACK_FILE%") do (
     set "PK=%%P"
     if "!PK!"=="" (
-        rem skip
-    ) else if "!PK:~0,1!"=="#" (
-        rem skip commented line
+        rem skip empty lines
     ) else (
         echo Building package !PK!
         "%LAZDIR%\lazbuild.exe" -q --lazarusdir="%LAZDIR%" "src\!PK!"
@@ -207,7 +205,7 @@ if "%DO_PACKS%"=="0" (
     for /f "usebackq delims=" %%P in ("%PACK_FILE%") do (
         set "PK=%%P"
         if "!PK!"=="" (
-        ) else if "!PK:~0,1!"=="#" (
+            rem skip empty lines
         ) else (
             echo Pre-building package !PK! ...
             "%LAZDIR%\lazbuild.exe" !INC! -q --lazarusdir="%LAZDIR%" "src\!PK!"
